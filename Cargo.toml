@@ -11,6 +11,7 @@ base32 = "0.4.0"
 base64 = "0.13.0"
 clap = "2.33.3"
 image = "0.22"
+openssl = "0.10"
 qrcode = "0.12.0"
 reqwest = { version = "0.11.3", features = ["blocking"] }
 serde = "1.0.126"

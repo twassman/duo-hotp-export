@@ -1,3 +1,4 @@
+use openssl::rsa::Rsa;
 use reqwest::{blocking::Client, header::USER_AGENT};
 use serde_json::Value;
 
@@ -49,6 +50,10 @@ fn fetch_api_details(authority: &str, code: &str, counter: u32) -> String {
             ("language", "en"),
             ("model", "Pixel 3a"),
             ("security_patch_level", "2021-02-01"),
+            ("pkpush", "rsa-sha512"),
+            ("pubkey", std::str::from_utf8(
+                &Rsa::generate(2048).unwrap().public_key_to_pem().unwrap()
+            ).unwrap()),
         ])
         .build()
         .unwrap();

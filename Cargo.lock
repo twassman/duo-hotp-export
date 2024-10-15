@@ -247,6 +247,7 @@ dependencies = [
  "clap",
  "image 0.22.5",
  "qrcode",
+ "openssl",
  "reqwest",
  "serde",
  "serde_json",
